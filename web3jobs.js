@@ -35,7 +35,7 @@ function init() {
   // as otherwise MetaMask won't be available
   if(location.protocol !== 'https:') {
     // https://ethereum.stackexchange.com/a/62217/620
-    //document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+    document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
     return;
   }
 
@@ -92,7 +92,7 @@ async function fetchAccountData() {
   console.log("Got accounts", accounts);
   selectedAccount = accounts[0];
 
-  document.querySelector("#selected-account").textContent = selectedAccount;
+  document.querySelector("#accoutname").textContent = selectedAccount;
 
   // Get a handl
   const template = document.querySelector("#template-balance");
@@ -111,7 +111,8 @@ async function fetchAccountData() {
     // Fill in the templated row and put in the document
     const clone = template.content.cloneNode(true);
     clone.querySelector(".address").textContent = address;
-    clone.querySelector(".balance").textContent = humanFriendlyBalance;
+    clone.querySelector("#accountbalance").style("visibility: visible");
+    clone.querySelector("#accountbalance").textContent = humanFriendlyBalance;
     accountContainer.appendChild(clone);
   });
 
