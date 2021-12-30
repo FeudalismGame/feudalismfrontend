@@ -95,11 +95,11 @@ async function fetchAccountData() {
   document.querySelector("#accoutname").textContent = selectedAccount;
 
   // Get a handl
-  const template = document.querySelector("#template-balance");
+  //const template = document.querySelector("#template-balance");
   //const accountContainer = document.querySelector("#accounts");
 
   // Purge UI elements any previously loaded accounts
-  accountContainer.innerHTML = '';
+  //accountContainer.innerHTML = '';
 
   // Go through all accounts and get their ETH balance
   const rowResolvers = accounts.map(async (address) => {
@@ -109,11 +109,11 @@ async function fetchAccountData() {
     const ethBalance = web3.utils.fromWei(balance, "ether");
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
     // Fill in the templated row and put in the document
-    const clone = template.content.cloneNode(true);
+    //const clone = template.content.cloneNode(true);
     //clone.querySelector(".address").textContent = address;
-    clone.querySelector("#accountbalance").style("visibility: visible");
-    clone.querySelector("#accountbalance").textContent = humanFriendlyBalance;
-    accountContainer.appendChild(clone);
+    document.querySelector("#accountbalance").style.visibility = 'visible';
+    document.querySelector("#accountbalance").textContent = humanFriendlyBalance;
+    //accountContainer.appendChild(clone);
   });
 
   // Because rendering account does its own RPC commucation
