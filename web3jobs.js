@@ -83,7 +83,7 @@ async function fetchAccountData() {
   const chainId = await web3.eth.getChainId();
   // Load chain information over an HTTP API
   const chainData = evmChains.getChain(chainId);
-  document.querySelector("#network-name").textContent = chainData.name;
+  //document.querySelector("#network-name").textContent = chainData.name;
 
   // Get list of accounts of the connected wallet
   const accounts = await web3.eth.getAccounts();
@@ -96,7 +96,7 @@ async function fetchAccountData() {
 
   // Get a handl
   const template = document.querySelector("#template-balance");
-  const accountContainer = document.querySelector("#accounts");
+  //const accountContainer = document.querySelector("#accounts");
 
   // Purge UI elements any previously loaded accounts
   accountContainer.innerHTML = '';
@@ -110,7 +110,7 @@ async function fetchAccountData() {
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
     // Fill in the templated row and put in the document
     const clone = template.content.cloneNode(true);
-    clone.querySelector(".address").textContent = address;
+    //clone.querySelector(".address").textContent = address;
     clone.querySelector("#accountbalance").style("visibility: visible");
     clone.querySelector("#accountbalance").textContent = humanFriendlyBalance;
     accountContainer.appendChild(clone);
