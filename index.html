@@ -43,18 +43,24 @@
       <h3 class="float-md-center mb-0" >FEUDALISM</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link btn-sm" target="_blank" href="https://creppy-studios.gitbook.io/feudalism/" >Whitepaper</a>
+        <a class="nav-link btn-sm" id="networkname" style="visibility: hidden;">Network</a>
         <a class="nav-link btn-sm" id="accoutname">Not Connected</a>
-        <a style="visibility: hidden;" class="nav-link btn-sm" id="accountbalance">58724 <img src="logoWheat.png" alt="Wheat" height="32" width="32"/></a>
+        <a style="visibility: hidden;" class="nav-link btn-sm" id="accountbalance">58724 <img src="./logoWheat.png" alt="Wheat" height="32" width="32"/></a>
       </nav>
     </div>
   </header>
-
-  <main id="connecttheme" class="px-3">
+  <!-- Before Connection -->
+  <main id="prepare" class="px-3">
     <h1>Connect Wallet!</h1>
     <p class="lead">Connect your wallet for entering rich world of Feudalism!</p>
     <p class="lead">
       <button class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="btn-connect">Connect</button>
     </p>
+  </main>
+  <!-- Connected-->
+  <main id="connected" class="px-3">
+    <h1>Welcome to Feudalism!</h1>
+    <p class="lead">You logged in to Feudalism Metaverse!</p>
   </main>
 
   <footer class="mt-auto text-white-75">
@@ -64,12 +70,12 @@
 
 
 <script type="text/javascript" src="https://unpkg.com/web3@1.5.2/dist/web3.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+<script type="text/javascript" src="./web3modal.js"></script>
 <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
 
 <!-- This is our example code -->
-<script type="text/javascript" src="./web3jobs.js"></script>
+<script type="text/javascript" src="./web3connection.js"></script>
   </body>
 </html>
