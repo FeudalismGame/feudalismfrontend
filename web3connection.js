@@ -20,6 +20,19 @@ let provider;
 // Address of the selected account
 let selectedAccount;
 
+// Wheat Contract
+var Contract = require('web3-eth-contract');
+
+// set provider for all later instances to use
+Contract.setProvider('https://polygon-rpc.com');
+
+var wheatContract = new Contract(require('./wheatABI.json'), '0x98dd4371579d35883BF37c84666b0300Ea619fFa');
+
+// Wheat balance function
+async function wheatBalanceOf(_address) {
+    balance = await wheatContract.methods.balanceOf(_address).call();
+    return balance;
+}
 
 /**
  * Setup the orchestra
@@ -97,7 +110,7 @@ async function fetchAccountData() {
 
   // Go through all accounts and get their ETH balance
   const rowResolvers = accounts.map(async (address) => {
-    const balance = await web3.eth.getBalance(address);
+    const balance = wheatBalanceOf(address);
     // ethBalance is a BigNumber instance
     // https://github.com/indutny/bn.js/
     const ethBalance = web3.utils.fromWei(balance, "ether");
