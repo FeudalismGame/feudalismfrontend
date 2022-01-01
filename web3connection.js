@@ -24,7 +24,7 @@ let provider;
 let selectedAccount;
 
 // Wheat ABI code
-wheatABI = require('./wheatABI.json');
+import wheatABI from './wheatABI.json';
 
 /**
  * Setup the orchestra
